@@ -1,35 +1,31 @@
 package agregacao;
-
 import java.util.ArrayList;
-
 public class Empresa {
     private int id;
     private String nome, cnpj;
-    private ArrayList Freelancers;
+    private ArrayList freeLancers;
 
     public Empresa() {
-        this.Freelancers = new ArrayList<>(); //cria espaços na memória
+        this.freeLancers = new ArrayList(); // cria espaço na memória
     }
 
-    public Empresa(int id, String nome, String cnpj, ArrayList freelancers) {
+    public Empresa(int id, String nome, String cnpj) {
         this.id = id;
         this.nome = nome;
         this.cnpj = cnpj;
-        Freelancers = new ArrayList<>();
+        this.freeLancers = new ArrayList();
     }
+    // adiciona um freelancer na empresa
+    // percebam que o objeto freeLancer já vem pronto - independência
+    public void adicionaFreeLancer(FreeLancer freeLancer){
+        this.freeLancers.add(freeLancer);
+    }
+    // remove um freelancer na empresa
+    // percebam que o objeto freeLancer já vem pronto - independência
 
-    public Empresa(int i, String google, String number) {
+    public void removeFreeLancer(FreeLancer freeLancer){
+        this.freeLancers.remove(freeLancer);
     }
-
-    //adiciona freelancer na empresa
-    public void adicionarFreelancer(Freelancer freelancer){
-        this.Freelancers.add(freelancer);
-    }
-    //remove freelacer da empresa
-    public void removerFreelancer(Freelancer freelancer){
-        this.Freelancers.remove(freelancer);
-    }
-
     public int getId() {
         return id;
     }
@@ -54,12 +50,12 @@ public class Empresa {
         this.cnpj = cnpj;
     }
 
-    public ArrayList getFreelancers() {
-        return Freelancers;
+    public ArrayList getFreeLancers() {
+        return freeLancers;
     }
 
-    public void setFreelancers(ArrayList freelancers) {
-        Freelancers = freelancers;
+    public void setFreeLancers(ArrayList freeLancers) {
+        this.freeLancers = freeLancers;
     }
 
     @Override
@@ -68,7 +64,7 @@ public class Empresa {
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", cnpj='" + cnpj + '\'' +
-                ", Freelancers=" + Freelancers +
+                ", freeLancers=" + freeLancers +
                 '}';
     }
 }

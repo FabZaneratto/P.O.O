@@ -1,17 +1,17 @@
-package agregacao;
+package exe01;
 
-//objeto-parte
-public class Freelancer {
-  private int id;
-  private String nome, funcao;
+public class Produto {
 
-    public Freelancer() {
-    }
+    private int id;
+    private String nome;
+    private float preco;
 
-    public Freelancer(int id, String nome, String funcao) {
+    public Produto() {}
+
+    public Produto(int id, String nome, float preco) {
         this.id = id;
         this.nome = nome;
-        this.funcao = funcao;
+        this.preco = preco;
     }
 
     public int getId() {
@@ -30,20 +30,20 @@ public class Freelancer {
         this.nome = nome;
     }
 
-    public String getFuncao() {
-        return funcao;
+    public float getPreco() {
+        return preco;
     }
 
-    public void setFuncao(String funcao) {
-        this.funcao = funcao;
+    public void setPreco(float preco) {
+        this.preco = preco;
     }
 
     @Override
     public String toString() {
-        return "Freelancer{" +
+        return "\nProduto{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
-                ", funcao='" + funcao + '\'' +
+                ", preco=" + preco +
                 '}';
     }
 }
